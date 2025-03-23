@@ -1,0 +1,62 @@
+.custom-calendar.vc-container {
+  & ::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  & ::-webkit-scrollbar-track {
+    display: none;
+  }
+  --day-border: 1px solid #b8c2cc;
+  --day-border-highlight: 1px solid #b8c2cc;
+  --day-width: 90px;
+  --day-height: 100px;
+  --weekday-bg: #f8fafc;
+  --weekday-border: 1px solid #eaeaea;
+
+  border-radius: 0;
+  width: 100%;
+
+  & .vc-header {
+    background-color: rgb(241, 245, 248);
+    padding: 0;
+    margin: 0;
+    & .vc-title-wrapper {
+      z-index: 10;
+    }
+  }
+  & .vc-weeks {
+    padding: 0;
+  }
+  & .vc-weekdays {
+    background-color: var(--weekday-bg);
+    border-bottom: var(--weekday-border);
+    border-top: var(--weekday-border);
+    padding: 5px 0;
+  }
+  & .vc-week:not(:has(.day-label)) {
+    display: none;
+  }
+  & .vc-day {
+    padding: 2px;
+    width: 100%;
+    text-align: left;
+    height: var(--day-height);
+    background-color: white;
+    &.weekday-1,
+    &.weekday-7 {
+      background-color: #eff8ff;
+    }
+    &:not(.on-bottom) {
+      border-bottom: var(--day-border);
+      &.weekday-1 {
+        border-bottom: var(--day-border-highlight);
+      }
+    }
+    &:not(.on-right) {
+      border-right: var(--day-border);
+    }
+  }
+  & .vc-day-dots {
+    margin-bottom: 5px;
+  }
+}
